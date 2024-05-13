@@ -3,8 +3,9 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import { ErrorResponseInterceptor } from './src/shared/error-response';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration(),provideHttpClient(withFetch())]
+  providers: [provideRouter(routes), provideClientHydration(),provideHttpClient(withFetch(), withInterceptors([ErrorResponseInterceptor]))]
 };

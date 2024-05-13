@@ -1,7 +1,11 @@
+<!-- El contenido del @deferbloque principal es la sección de contenido que se carga de forma diferida. No se procesará inicialmente y todo el contenido aparecerá una vez que se cumpla el activador o whenla condición especificados y se hayan obtenido las dependencias. -->
+
 @defer {
     <app-async/>
 } @placeholder (minimum 500ms) {
     <p>Tiempo de carga de la peticion</p>
 }
+
+<!-- Un bloque opcional que declara que el contenido se mostrará antes de que se active el bloque de aplazamiento. -->
 
 <router-outlet />
