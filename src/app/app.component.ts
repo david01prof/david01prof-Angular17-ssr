@@ -1,12 +1,12 @@
 import { Component ,afterNextRender} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { AsyncComponent } from './src/components/async/async.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,AsyncComponent,CommonModule],
+  imports: [RouterOutlet,AsyncComponent,CommonModule,RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
