@@ -8,4 +8,6 @@ import { ErrorResponseInterceptor } from './src/shared/error-response';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes,withComponentInputBinding(), withViewTransitions()), provideClientHydration(),provideHttpClient(withFetch(), withInterceptors([ErrorResponseInterceptor]))]
+
+  // withComponentInputBinding elemento empleado para coger valores de las rutas
 };
