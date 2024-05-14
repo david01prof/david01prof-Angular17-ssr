@@ -25,7 +25,6 @@ export class ProductsComponent implements OnInit{
     runInInjectionContext(this.injector,()=>{
       this.productSvc = inject(EndpointsSimulationService);
       const result = toSignal(this.products$)
-      console.log(result);
     })
 
   }
