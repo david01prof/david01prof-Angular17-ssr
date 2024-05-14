@@ -10,5 +10,5 @@ import { RouterLink } from '@angular/router';
 })
 export class DetailsComponent {
 
-  @Input('id') productId !: string;
+  @Input({alias:'id'}) productId !: string;
 }
