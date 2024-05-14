@@ -1,4 +1,12 @@
-<p>products works!</p>
+@if (products$ | async; as allProducts) {
+    @for (product of allProducts; track product.id) {
+        <p>Producto {{product.id}}</p>
+    }
+    @empty {
+        <li>No items found</li>
+    }
+
+    <a class="" [routerLink]="['/product-details',666]">Send id</a>
+}
 
 
-<a class="" [routerLink]="['/product-details',666]">Send id</a>
