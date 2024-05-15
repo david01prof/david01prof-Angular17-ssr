@@ -4,7 +4,19 @@
     <app-async/>
 } @placeholder (minimum 500ms) {
     <p>Tiempo de carga de la peticion</p>
-} -->
+} @loading{
+    is loading...
+} @error{
+    <p> Error </p>
+}
+
+Trigger 
+Ayudan a la funcionalidad de los defer
+
+ @defer (on viewport; on timer(5s)){}
+
+  @defer(when cond){}
+-->
 
 <!-- Un bloque opcional que declara que el contenido se mostrará antes de que se active el bloque de aplazamiento. -->
 
@@ -19,4 +31,30 @@
     </ul>
 </nav>
 
-<router-outlet />
+<!-- <router-outlet /> -->
+
+<!-- <button (click)="cond = !cond" type="button">Click</button> -->
+<button type="button" #greeting>Click</button>
+
+<!-- @defer (when cond){
+    <app-async/>
+} @placeholder {
+    <p>Tiempo de carga de la peticion</p>
+} @loading{
+    is loading...
+} @error{
+    <p> Error </p>
+} -->
+
+@defer (on interaction(greeting)){
+    <app-async/>
+} @placeholder {
+    <p>Tiempo de carga de la peticion</p>
+} @loading{
+    is loading...
+} @error{
+    <p> Error </p>
+}
+
+
+<div class="" style="height: 50vh;"></div>

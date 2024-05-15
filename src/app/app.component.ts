@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'newsAngular17';
+  cond = false;
 
   constructor(){
         // Este metodo solo se inicializa una vez. Para que se reinicie cada f5, es afterRender
