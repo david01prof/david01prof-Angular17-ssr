@@ -17,3 +17,7 @@ Mejora del SEO
 Nuevo proyecto : ng new --ssr
 
 Proyecto existente : ng add @angular/ssr
+
+## Client Hydration
+
+Desde el server se ejecuta la app, esto llega al navegador, este descarga y analiza todo el js y empieza a ejecutarse
