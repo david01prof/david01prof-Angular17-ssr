@@ -11,6 +11,8 @@ import {toSignal} from '@angular/core/rxjs-interop'
   imports: [RouterLink,CommonModule,CardComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
+  // styleUrls: ['./products.component.scss','']
+  // styles: ['$primary: red; h1 { color : $primary }']
 })
 export class ProductsComponent implements OnInit{
 
