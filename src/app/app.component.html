@@ -33,12 +33,12 @@ Ayudan a la funcionalidad de los defer
     </ul>
 </nav>
 
-<router-outlet />
+<!-- <router-outlet /> -->
 
 ----------------------------------------------------------------------------------------------------------------------------
 <br>
 <!-- <button (click)="cond = !cond" type="button">Click</button> -->
-<button type="button" #greeting>Click</button>
+<!-- <button type="button" #greeting>Click</button> -->
 
 <!-- @defer (when cond){
     <app-async/>
@@ -50,7 +50,7 @@ Ayudan a la funcionalidad de los defer
     <p> Error </p>
 } -->
 
-@defer (on interaction(greeting)){
+<!-- @defer (on interaction(greeting)){
     <app-async/>
 } @placeholder {
     <p>Tiempo de carga de la peticion</p>
@@ -58,7 +58,9 @@ Ayudan a la funcionalidad de los defer
     is loading...
 } @error{
     <p> Error </p>
-}
+} -->
 
+<p>Value in parent: {{valueFromParent}}</p>
+<app-child [(value)]="valueFromParent"></app-child><app-child [(value)]="valueFromParent"></app-child><app-child [(value)]="valueFromParent"></app-child>
 
 <div class="" style="height: 50vh;"></div>
