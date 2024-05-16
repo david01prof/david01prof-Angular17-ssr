@@ -1,27 +1,54 @@
+
 <!-- El contenido del @deferbloque principal es la sección de contenido que se carga de forma diferida. No se procesará inicialmente y todo el contenido aparecerá una vez que se cumpla el activador o whenla condición especificados y se hayan obtenido las dependencias. -->
 
-<!-- @defer {
-    <app-async/>
-} @placeholder (minimum 500ms) {
-    <p>Tiempo de carga de la peticion</p>
-} @loading{
-    is loading...
-} @error{
-    <p> Error </p>
-}
+<!-- 
 
-Trigger 
-Ayudan a la funcionalidad de los defer
+    # Defer y sus variantes
+    
+    @defer {
+        <app-async/>
+    } @placeholder (minimum 500ms) {
+        <p>Tiempo de carga de la peticion</p>
+    } @loading{
+        is loading...
+    } @error{
+        <p> Error </p>
+    }
 
- @defer (on viewport; on timer(5s)){}
+    # Trigger, ayudan a la funcionalidad de los defer
 
-  @defer(when cond){}
+    @defer (on viewport; on timer(5s)){}
+
+    @defer(when cond){}
+
+    # Ejemplos
+
+    <button (click)="cond = !cond" type="button">Click</button> 
+
+    @defer (when cond){
+        <app-async/>
+    } @placeholder {
+        <p>Tiempo de carga de la peticion</p>
+    } @loading{
+        is loading...
+    } @error{
+        <p> Error </p>
+    } 
+
+    <button type="button" #greeting>Click</button>
+
+    @defer (on interaction(greeting)){
+        <app-async/>
+    } @placeholder {
+        <p>Tiempo de carga de la peticion</p>
+    } @loading{
+        is loading...
+    } @error{
+        <p> Error </p>
+    }
+
 -->
 
-<!-- Un bloque opcional que declara que el contenido se mostrará antes de que se active el bloque de aplazamiento. -->
-
-
-<nav>
     <ul>
         <li>
             <a routerLinkActive="activated" routerLink="/cart">Cart</a>
@@ -31,36 +58,30 @@ Ayudan a la funcionalidad de los defer
             <a routerLinkActive="activated" routerLink="/signals">Signals</a>
         </li>
     </ul>
-</nav>
-
-<!-- <router-outlet /> -->
-
-----------------------------------------------------------------------------------------------------------------------------
+    
+<div>---------------------------------------------------------------------------------------------------------------------------</div>
 <br>
-<!-- <button (click)="cond = !cond" type="button">Click</button> -->
-<!-- <button type="button" #greeting>Click</button> -->
 
-<!-- @defer (when cond){
-    <app-async/>
-} @placeholder {
-    <p>Tiempo de carga de la peticion</p>
-} @loading{
-    is loading...
-} @error{
-    <p> Error </p>
-} -->
-
-<!-- @defer (on interaction(greeting)){
-    <app-async/>
-} @placeholder {
-    <p>Tiempo de carga de la peticion</p>
-} @loading{
-    is loading...
-} @error{
-    <p> Error </p>
-} -->
+<!-- # View child / View children -->
 
 <p>Value in parent: {{valueFromParent}}</p>
-<app-child [(value)]="valueFromParent"></app-child><app-child [(value)]="valueFromParent"></app-child><app-child [(value)]="valueFromParent"></app-child>
+<app-child [(value)]="valueFromParent"></app-child>
+<app-child [(value)]="valueFromParent"></app-child>
 
-<div class="" style="height: 50vh;"></div>
+<div>---------------------------------------------------------------------------------------------------------------------------</div>
+<br>
+
+<app-panel>
+    <button #btn>Boton</button>
+</app-panel>
+
+<app-list>
+    <li #listItem>Item 1</li>
+    <li #listItem>Item 2</li>
+    <li #listItem>Item 3</li>
+</app-list>
+
+<div>---------------------------------------------------------------------------------------------------------------------------</div>
+<br>
+
+<!-- <router-outlet /> -->
