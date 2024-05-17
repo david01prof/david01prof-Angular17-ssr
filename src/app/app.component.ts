@@ -5,11 +5,12 @@ import { AsyncComponent } from './src/components/async/async.component';
 import { ChildComponent } from './src/components/child/child.component';
 import { PanelComponent } from './src/components/panel/panel.component';
 import { ListComponent } from './src/components/list/list.component';
+import { CounterComponent } from './src/components/counter/counter.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,AsyncComponent,CommonModule,RouterLink,ChildComponent,PanelComponent,ListComponent],
+  imports: [RouterOutlet,AsyncComponent,CommonModule,RouterLink,ChildComponent,PanelComponent,ListComponent,CounterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

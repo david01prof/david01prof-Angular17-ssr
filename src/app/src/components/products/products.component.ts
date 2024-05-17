@@ -2,8 +2,9 @@ import { Component, EnvironmentInjector, OnInit, inject, runInInjectionContext }
 import { RouterLink } from '@angular/router';
 import { EndpointsSimulationService } from '../../services/endpoints-simulation.service';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from './card/card.component';
+import { CardComponent, Product } from './card/card.component';
 import {toSignal} from '@angular/core/rxjs-interop'
+import { CartStore } from '../../../store/cart.store';
 
 @Component({
   selector: 'app-products',
@@ -29,5 +30,11 @@ export class ProductsComponent implements OnInit{
       const result = toSignal(this.products$)
     })
 
+  }
+
+  cartStore = inject(CartStore);
+
+  onAddToCart(product:Product):void{
+    this.cartStore.addToCart(product);
   }
 }

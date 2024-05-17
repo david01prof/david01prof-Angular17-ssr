@@ -5,12 +5,14 @@
     <div class="">
         <h3 class="">Category</h3>
         <h2 class="">
-            <a class="" [routerLink]="['/product-details',666]">{{product().title}}</a>
+            <a class="" [routerLink]="['/product-details',666]">{{product.title}}</a>
         </h2>
+
+        <button (click)="onAddToCart(product)">Add cart</button>
         <p class="">$16.00</p>
         
-        @for (item of rating(); track $index) {
+        <!-- @for (item of rating(); track $index) {
             <p>{{item}}</p>
-        }
+        } -->
     </div>
 </div>

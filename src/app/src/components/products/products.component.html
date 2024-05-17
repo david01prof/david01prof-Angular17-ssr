@@ -1,6 +1,7 @@
 @if (products$ | async; as allProducts) {
+    <p>Total: {{cartStore.products().length}}</p>
     @for (product of allProducts; track product.id) {
-        <app-card [product]="product"></app-card>
+        <app-card [product]="product" (addToCart)="onAddToCart($event)"></app-card>
     }
     @empty {
         <li>No items found</li>
